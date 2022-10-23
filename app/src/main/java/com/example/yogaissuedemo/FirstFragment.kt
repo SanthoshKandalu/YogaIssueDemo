@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.yogaissuedemo.databinding.FragmentFirstBinding
+import com.facebook.yoga.YogaConstants
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -34,6 +35,7 @@ class FirstFragment : Fragment() {
 
         binding.button.setOnClickListener {
             binding.textInsideYoga.text = "I am setting a bigger text to show that the parent YogaLayout does not change its height for the change in the text. This has been a big issue especially when using YogaLayout as child of Recycler view"
+            binding.yogaContainer.getYogaNodeForView(binding.textInsideYoga).dirty()
         }
     }
 
