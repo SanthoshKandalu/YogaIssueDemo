@@ -35,7 +35,7 @@ class FirstFragment : Fragment() {
 
         binding.button.setOnClickListener {
             binding.textInsideYoga.text = "I am setting a bigger text to show that the parent YogaLayout does not change its height for the change in the text. This has been a big issue especially when using YogaLayout as child of Recycler view"
-            binding.yogaContainer.getYogaNodeForView(binding.textInsideYoga).dirty()
+            binding.yogaContainer.invalidate(binding.textInsideYoga)
         }
     }
 
